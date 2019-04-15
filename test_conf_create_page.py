@@ -3,7 +3,7 @@ import json
 from requests.auth import HTTPBasicAuth
 
 email = 'mikeklimchuck@gmail.com'
-api_token = 'marshalshady'
+api_token = '1eLH9EZnc3ymzVD1TqYd2F7B'
 
 page_title = 'test page'
 page_html = '<p>This page was created with Python!</p>'
