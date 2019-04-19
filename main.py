@@ -24,6 +24,10 @@ PROJECTS = {
 
 
 def create_daily_reports():
+    """
+    This method creates the page 'Daily Report' from template for each project
+    :return:
+    """
     for project_name, project_data in PROJECTS.items():
         template_id = project_data.get('TemplateID')
         parent_page_id = project_data.get('ParentPageID')
@@ -36,6 +40,10 @@ def create_daily_reports():
 
 
 def create_daily_status():
+    """
+    This method creates the page 'Status Report' (consolidated report for all projects)
+    :return:
+    """
     template = get_template_by_id(STATUS_PAGE_TEMPLATE_ID)
     value_storage = template.get('body').get('storage').get('value')
     page_id = create_status_page(STATUS_PAGE_PARENT_PAGE_ID, STATUS_PAGE_SPACE_KEY, value_storage)

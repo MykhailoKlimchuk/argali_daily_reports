@@ -3,8 +3,8 @@ import json
 from requests.auth import HTTPBasicAuth
 import datetime
 
-email = 'mikeklimchuck@gmail.com'
-api_token = '1eLH9EZnc3ymzVD1TqYd2F7B'
+email = ''  # set admin`s email
+api_token = ''  # set admin`s api token
 
 URL = 'https://wonderland.atlassian.net/wiki/rest/api/content/'
 

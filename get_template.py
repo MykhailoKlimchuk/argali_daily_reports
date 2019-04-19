@@ -4,8 +4,9 @@ import json
 
 TEMPLATES_URL = "https://wonderland.atlassian.net/wiki/rest/api/template/{}"
 
-email = 'mikeklimchuck@gmail.com'
-api_token = '1eLH9EZnc3ymzVD1TqYd2F7B'
+email = ''  # set admin`s email
+api_token = ''  # set admin`s api token
+
 
 AUTH = HTTPBasicAuth(email, api_token)
 
@@ -15,6 +16,12 @@ HEADERS = {
 
 
 def get_template_by_id(template_id):
+    """
+
+    :param template_id:
+    :return: response with template data in json format
+    """
+
     template_url = TEMPLATES_URL.format(template_id)
 
     response = requests.request(

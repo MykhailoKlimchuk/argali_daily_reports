@@ -1,12 +1,11 @@
 import requests
 import json
 from requests.auth import HTTPBasicAuth
-import get_template
 import datetime
 from add_label import add_label
 
-email = 'mikeklimchuck@gmail.com'
-api_token = '1eLH9EZnc3ymzVD1TqYd2F7B'
+email = ''  # set admin`s email
+api_token = ''  # set admin`s api token
 
 URL = 'https://wonderland.atlassian.net/wiki/rest/api/content/'
 
@@ -19,6 +18,13 @@ HEADERS = {
 
 
 def update_storage_data(storage_data, date, project_name):
+    """
+    This method update html code form template and inserts into it project_name and date
+    :param storage_data:
+    :param date:
+    :param project_name:
+    :return: updating storage value
+    """
     value_storage_splited = storage_data.split('time datetime=')
     first_space = value_storage_splited[1].find(' ')
     temp_sec_part = value_storage_splited[1][first_space:]
@@ -35,6 +41,14 @@ def update_storage_data(storage_data, date, project_name):
 
 
 def create_new_daily_report(parent_page_id, space_key, storage_data, project_name):
+    """
+    This method create 'Daily Report page for project'
+    :param parent_page_id:
+    :param space_key:
+    :param storage_data: page`s html code from the template
+    :param project_name:
+    :return:
+    """
     current_date = datetime.datetime.now()
 
     year = current_date.year
